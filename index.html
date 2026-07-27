@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- LANDING: pantalla de acceso -->
+  <section id="landing" class="landing">
+    <div class="landing-bg"></div>
+    <div class="landing-card">
+      <p class="landing-question">¿Me amas?</p>
+      <input type="text" id="accessInput" class="landing-input" placeholder="Escribe la respuesta..." autocomplete="off" />
+      <p id="accessError" class="landing-error">Piensalo de nuevo :(</p>
+      <button id="accessBtn" class="landing-btn">Entrar</button>
+    </div>
+  </section>
+
+  <!-- PÁGINA PRINCIPAL -->
+  <main id="main" class="main hidden">
+
+    <!-- Zona superior: texto animado -->
+    <header class="main-top">
+      <h1 class="animated-title" id="animatedTitle"></h1>
+    </header>
+
+    <!-- Zona central: carrusel polaroid -->
+    <section class="carousel-wrapper">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Las fotos se inyectan desde JS -->
+      </div>
+    </section>
+
+    <!-- Zona inferior: frases cambiantes -->
+    <footer class="main-bottom">
+      <p class="changing-phrase" id="changingPhrase"></p>
+    </footer>
+
+    <!-- Decoraciones laterales -->
+    <div class="side-deco side-deco--left"></div>
+    <div class="side-deco side-deco--right"></div>
+
+    <!-- Contenedor para efectos decorativos -->
+    <div class="decorations" id="decorations">
+      <div class="bg-blossom bg-blossom--1"></div>
+      <div class="bg-blossom bg-blossom--2"></div>
+      <div class="bg-blossom bg-blossom--3"></div>
+      <div class="bg-blossom bg-blossom--4"></div>
+
+      <!-- Corazones rellenos -->
+      <svg class="bg-heart" viewBox="0 0 100 100" width="48" height="48">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#c2185b" />
+      </svg>
+      <svg class="bg-heart bg-heart--2" viewBox="0 0 100 100" width="36" height="36">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#d81b60" />
+      </svg>
+      <svg class="bg-heart bg-heart--3" viewBox="0 0 100 100" width="28" height="28">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#e91e63" />
+      </svg>
+      <svg class="bg-heart bg-heart--4" viewBox="0 0 100 100" width="55" height="55">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#c2185b" />
+      </svg>
+      <svg class="bg-heart bg-heart--5" viewBox="0 0 100 100" width="32" height="32">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#d81b60" />
+      </svg>
+      <svg class="bg-heart bg-heart--6" viewBox="0 0 100 100" width="22" height="22">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#f06292" />
+      </svg>
+      <svg class="bg-heart bg-heart--7" viewBox="0 0 100 100" width="20" height="20">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#e91e63" />
+      </svg>
+      <svg class="bg-heart bg-heart--8" viewBox="0 0 100 100" width="40" height="40">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#c2185b" />
+      </svg>
+      <svg class="bg-heart bg-heart--9" viewBox="0 0 100 100" width="26" height="26">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#d81b60" />
+      </svg>
+      <svg class="bg-heart bg-heart--10" viewBox="0 0 100 100" width="34" height="34">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#f06292" />
+      </svg>
+      <svg class="bg-heart bg-heart--11" viewBox="0 0 100 100" width="16" height="16">
+        <path d="M50,30 C50,18 28,8 18,26 C8,44 50,82 50,82 C50,82 92,44 82,26 C72,8 50,18 50,30 Z" fill="#c2185b" />
+      </svg>
+
+      <!-- Flores rellenas -->
+      <svg class="bg-flower" viewBox="0 0 100 100" width="42" height="42">
+        <circle cx="50" cy="50" r="7" fill="#d81b60" />
+        <ellipse cx="50" cy="26" rx="5" ry="14" fill="#c2185b" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="5" ry="14" fill="#c2185b" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="5" ry="14" fill="#c2185b" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="5" ry="14" fill="#c2185b" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="5" ry="14" fill="#c2185b" transform="rotate(288 50 50)" />
+      </svg>
+      <svg class="bg-flower bg-flower--2" viewBox="0 0 100 100" width="30" height="30">
+        <circle cx="50" cy="50" r="5" fill="#e91e63" />
+        <ellipse cx="50" cy="26" rx="4" ry="11" fill="#d81b60" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="4" ry="11" fill="#d81b60" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="4" ry="11" fill="#d81b60" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="4" ry="11" fill="#d81b60" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="4" ry="11" fill="#d81b60" transform="rotate(288 50 50)" />
+      </svg>
+      <svg class="bg-flower bg-flower--3" viewBox="0 0 100 100" width="50" height="50">
+        <circle cx="50" cy="50" r="8" fill="#c2185b" />
+        <ellipse cx="50" cy="26" rx="6" ry="16" fill="#e91e63" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="6" ry="16" fill="#e91e63" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="6" ry="16" fill="#e91e63" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="6" ry="16" fill="#e91e63" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="6" ry="16" fill="#e91e63" transform="rotate(288 50 50)" />
+      </svg>
+      <svg class="bg-flower bg-flower--4" viewBox="0 0 100 100" width="26" height="26">
+        <circle cx="50" cy="50" r="5" fill="#f06292" />
+        <ellipse cx="50" cy="26" rx="3.5" ry="10" fill="#d81b60" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="3.5" ry="10" fill="#d81b60" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="3.5" ry="10" fill="#d81b60" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="3.5" ry="10" fill="#d81b60" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="3.5" ry="10" fill="#d81b60" transform="rotate(288 50 50)" />
+      </svg>
+      <svg class="bg-flower bg-flower--5" viewBox="0 0 100 100" width="35" height="35">
+        <circle cx="50" cy="50" r="6" fill="#c2185b" />
+        <ellipse cx="50" cy="26" rx="4.5" ry="13" fill="#f06292" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="4.5" ry="13" fill="#f06292" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="4.5" ry="13" fill="#f06292" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="4.5" ry="13" fill="#f06292" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="4.5" ry="13" fill="#f06292" transform="rotate(288 50 50)" />
+      </svg>
+      <svg class="bg-flower bg-flower--6" viewBox="0 0 100 100" width="18" height="18">
+        <circle cx="50" cy="50" r="4" fill="#d81b60" />
+        <ellipse cx="50" cy="26" rx="3" ry="8" fill="#c2185b" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="3" ry="8" fill="#c2185b" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="3" ry="8" fill="#c2185b" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="3" ry="8" fill="#c2185b" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="3" ry="8" fill="#c2185b" transform="rotate(288 50 50)" />
+      </svg>
+      <svg class="bg-flower bg-flower--7" viewBox="0 0 100 100" width="38" height="38">
+        <circle cx="50" cy="50" r="6" fill="#c2185b" />
+        <ellipse cx="50" cy="26" rx="5" ry="12" fill="#e91e63" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="5" ry="12" fill="#e91e63" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="5" ry="12" fill="#e91e63" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="5" ry="12" fill="#e91e63" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="5" ry="12" fill="#e91e63" transform="rotate(288 50 50)" />
+      </svg>
+      <svg class="bg-flower bg-flower--8" viewBox="0 0 100 100" width="24" height="24">
+        <circle cx="50" cy="50" r="4" fill="#f06292" />
+        <ellipse cx="50" cy="26" rx="3.5" ry="9" fill="#d81b60" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="3.5" ry="9" fill="#d81b60" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="3.5" ry="9" fill="#d81b60" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="3.5" ry="9" fill="#d81b60" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="3.5" ry="9" fill="#d81b60" transform="rotate(288 50 50)" />
+      </svg>
+      <svg class="bg-flower bg-flower--9" viewBox="0 0 100 100" width="44" height="44">
+        <circle cx="50" cy="50" r="7" fill="#d81b60" />
+        <ellipse cx="50" cy="26" rx="5.5" ry="15" fill="#c2185b" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="5.5" ry="15" fill="#c2185b" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="5.5" ry="15" fill="#c2185b" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="5.5" ry="15" fill="#c2185b" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="5.5" ry="15" fill="#c2185b" transform="rotate(288 50 50)" />
+      </svg>
+      <svg class="bg-flower bg-flower--10" viewBox="0 0 100 100" width="20" height="20">
+        <circle cx="50" cy="50" r="3.5" fill="#e91e63" />
+        <ellipse cx="50" cy="26" rx="3" ry="7.5" fill="#d81b60" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="3" ry="7.5" fill="#d81b60" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="3" ry="7.5" fill="#d81b60" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="3" ry="7.5" fill="#d81b60" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="3" ry="7.5" fill="#d81b60" transform="rotate(288 50 50)" />
+      </svg>
+      <svg class="bg-flower bg-flower--11" viewBox="0 0 100 100" width="28" height="28">
+        <circle cx="50" cy="50" r="5" fill="#c2185b" />
+        <ellipse cx="50" cy="26" rx="4" ry="10" fill="#f06292" transform="rotate(0 50 50)" />
+        <ellipse cx="50" cy="26" rx="4" ry="10" fill="#f06292" transform="rotate(72 50 50)" />
+        <ellipse cx="50" cy="26" rx="4" ry="10" fill="#f06292" transform="rotate(144 50 50)" />
+        <ellipse cx="50" cy="26" rx="4" ry="10" fill="#f06292" transform="rotate(216 50 50)" />
+        <ellipse cx="50" cy="26" rx="4" ry="10" fill="#f06292" transform="rotate(288 50 50)" />
+      </svg>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
